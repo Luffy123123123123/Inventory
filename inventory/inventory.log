@@ -1,0 +1,58 @@
+2024-10-10 11:52:40,475 default      ERROR    post None POST request body is empty.
+2024-10-10 11:55:23,516 default      ERROR    post (<class 'TypeError'>, TypeError("Field.__init__() got an unexpected keyword argument 'body'"), <traceback object at 0x000002C077463FC0>) Field.__init__() got an unexpected keyword argument 'body'
+Traceback (most recent call last):
+  File "D:\new\new assignment\inventory\items\views.py", line 36, in post
+    seralizer = Itemserializers(body=json_data)
+  File "D:\new\new assignment\env\lib\site-packages\rest_framework\serializers.py", line 119, in __init__
+    super().__init__(**kwargs)
+TypeError: Field.__init__() got an unexpected keyword argument 'body'
+2024-10-10 11:56:02,352 default      ERROR    post (<class 'AttributeError'>, AttributeError("'Items' object has no attribute 'data'"), <traceback object at 0x00000188D155FC40>) 'Items' object has no attribute 'data'
+Traceback (most recent call last):
+  File "D:\new\new assignment\inventory\items\views.py", line 39, in post
+    return Response({'success': True,'status': 200, 'item': item.data}, status=200)
+AttributeError: 'Items' object has no attribute 'data'
+2024-10-10 12:04:52,450 default      ERROR    post (<class 'TypeError'>, TypeError('AddItemApiView.item() takes 1 positional argument but 2 were given'), <traceback object at 0x00000245B6856A40>) AddItemApiView.item() takes 1 positional argument but 2 were given
+Traceback (most recent call last):
+  File "D:\new\new assignment\inventory\items\views.py", line 44, in post
+    item_data = self.item(json_data)
+TypeError: AddItemApiView.item() takes 1 positional argument but 2 were given
+2024-10-10 12:05:24,936 default      ERROR    post (<class 'TypeError'>, TypeError('AddItemApiView.item() takes 1 positional argument but 2 were given'), <traceback object at 0x000001207D37E880>) AddItemApiView.item() takes 1 positional argument but 2 were given
+Traceback (most recent call last):
+  File "D:\new\new assignment\inventory\items\views.py", line 43, in post
+    item_data = self.item(json_data)
+TypeError: AddItemApiView.item() takes 1 positional argument but 2 were given
+2024-10-10 12:05:50,518 default      ERROR    post (<class 'TypeError'>, TypeError('AddItemApiView.item() takes 2 positional arguments but 3 were given'), <traceback object at 0x000001C93A310CC0>) AddItemApiView.item() takes 2 positional arguments but 3 were given
+Traceback (most recent call last):
+  File "D:\new\new assignment\inventory\items\views.py", line 43, in post
+    item_data = self.item(self,json_data)
+TypeError: AddItemApiView.item() takes 2 positional arguments but 3 were given
+2024-10-10 12:06:01,302 default      ERROR    post (<class 'items.models.Items.MultipleObjectsReturned'>, MultipleObjectsReturned('get() returned more than one Items -- it returned 2!'), <traceback object at 0x0000012CC9567B80>) get() returned more than one Items -- it returned 2!
+Traceback (most recent call last):
+  File "D:\new\new assignment\inventory\items\views.py", line 43, in post
+    item_data = self.item(json_data)
+  File "D:\new\new assignment\inventory\items\views.py", line 30, in item
+    return Items.objects.get(name = item_data['name'])
+  File "D:\new\new assignment\env\lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "D:\new\new assignment\env\lib\site-packages\django\db\models\query.py", line 652, in get
+    raise self.model.MultipleObjectsReturned(
+items.models.Items.MultipleObjectsReturned: get() returned more than one Items -- it returned 2!
+2024-10-10 12:07:00,784 default      ERROR    post (<class 'AttributeError'>, AttributeError("'AddItemApiView' object has no attribute 'item'"), <traceback object at 0x0000010EE9123140>) 'AddItemApiView' object has no attribute 'item'
+Traceback (most recent call last):
+  File "D:\new\new assignment\inventory\items\views.py", line 37, in post
+    item_data = self.item(json_data)
+AttributeError: 'AddItemApiView' object has no attribute 'item'
+2024-10-10 12:07:21,860 default      ERROR    post (<class 'items.models.Items.MultipleObjectsReturned'>, MultipleObjectsReturned('get() returned more than one Items -- it returned 2!'), <traceback object at 0x00000135A271AE00>) get() returned more than one Items -- it returned 2!
+Traceback (most recent call last):
+  File "D:\new\new assignment\inventory\items\views.py", line 37, in post
+    if not Items.objects.get(name = json_data['name']):
+  File "D:\new\new assignment\env\lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "D:\new\new assignment\env\lib\site-packages\django\db\models\query.py", line 652, in get
+    raise self.model.MultipleObjectsReturned(
+items.models.Items.MultipleObjectsReturned: get() returned more than one Items -- it returned 2!
+2024-10-10 12:08:30,978 default      DEBUG    post None item already exists
+2024-10-10 12:08:54,978 default      INFO     post None item created
+2024-10-10 12:08:59,667 default      DEBUG    post None item already exists
+2024-10-10 12:24:46,842 default      DEBUG    put None Item with id 100 does not exist.
+2024-10-10 12:28:27,288 default      DEBUG    delete None Item with id 100 does not exist.
